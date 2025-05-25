@@ -9,7 +9,19 @@
 
 namespace py = pybind11;
 
+// Forzar la generación de la vtable
+namespace adapters {
+    void force_vtable_generation() {
+        TorchImageProcessor dummy_processor;
+        TorchModelLoader dummy_loader;
+        TorchInference dummy_inference;
+    }
+}
+
 PYBIND11_MODULE(googlenet, m) {
+    // Llamar a force_vtable_generation para evitar eliminación de código
+    adapters::force_vtable_generation();
+
     py::class_<domain::GoogLeNetService>(m, "GoogLeNetService")
         .def(py::init([](const std::string& /* dummy */) {
             return std::make_unique<domain::GoogLeNetService>(

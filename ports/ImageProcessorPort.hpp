@@ -8,7 +8,7 @@ namespace ports {
 
 class ImageProcessorPort {
 public:
-    virtual torch::Tensor preprocess(const std::string& image_path) = 0;
+    virtual torch::Tensor preprocess(const std::string& tensor_path) = 0;
     virtual ~ImageProcessorPort() = default;
 };
 
