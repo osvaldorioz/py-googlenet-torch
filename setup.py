@@ -6,7 +6,7 @@ ext_modules = [
         'googlenet',
         [
             'main.cpp',
-            'domain/GoogLeNetService.tpp'  # Todavía usamos este .tpp
+            'domain/GoogLeNetService.tpp'  
         ],
         include_dirs=[
             pybind11.get_include(),
