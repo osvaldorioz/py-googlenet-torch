@@ -1,7 +1,7 @@
 import torch
 import torchvision.models as models
 
-# Cargar modelo preentrenado
+# Modelo preentrenado
 model = models.googlenet(pretrained=True)
 model.eval()
 
