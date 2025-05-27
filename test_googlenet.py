@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import json
 
 def load_imagenet_labels():
-    # Cargar etiquetas reales de ImageNet (descarga imagenet_classes.txt si no lo tienes)
+    # Cargar etiquetas reales de ImageNet
     try:
         with open("imagenet_classes.txt", "r") as f:
             return [line.strip() for line in f.readlines()]
